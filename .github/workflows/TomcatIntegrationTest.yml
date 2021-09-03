@@ -2,7 +2,7 @@ name: Tomcat integration test
 on:
    push:
       branches:
-      - "*"
+      - "testing/*"
 jobs: 
     tomcat_integration_test:
        runs-on: ubuntu-latest
