@@ -55,6 +55,9 @@ jobs:
           run: mvn --version
 
         - name: Run unit tests
+          run: mvn -B test --file tomcat/pom.xml
+
+        - name: Run unit tests
           run: mvn -B failsafe:integration-test --file tomcat/pom.xml
 
     tomcat_local_apply_setup_test:
