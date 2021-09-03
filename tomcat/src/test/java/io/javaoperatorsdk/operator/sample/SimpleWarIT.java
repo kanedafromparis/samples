@@ -20,7 +20,6 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.notNullValue;
 
-@Category(IntegrationTest.class)
 public class SimpleWarIT {
 
     final static String TEST_NS = "tomcat-test";
