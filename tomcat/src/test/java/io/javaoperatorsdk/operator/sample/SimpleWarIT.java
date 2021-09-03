@@ -7,9 +7,7 @@ import io.fabric8.kubernetes.client.*;
 import io.fabric8.kubernetes.client.extended.run.RunConfigBuilder;
 import io.javaoperatorsdk.operator.Operator;
 import io.javaoperatorsdk.operator.config.runtime.DefaultConfigurationService;
-import io.javaoperatorsdk.operator.test.IntegrationTest;
 import org.junit.Test;
-import org.junit.experimental.categories.Category;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
