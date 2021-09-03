@@ -1,0 +1,45 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: tomcat-operator-admin
+subjects:
+- kind: ServiceAccount
+  name: tomcat-operator
+  namespace: tomcat-operator
+roleRef:
+  kind: ClusterRole
+  name: tomcat-operator
+  apiGroup: ""
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: tomcat-operator
+rules:
+- apiGroups:
+  - ""
+  - "extensions"
+  - "apps"
+  resources:
+  - deployments
+  - services
+  - pods
+  - pods/exec
+  verbs:
+  - '*'
+- apiGroups:
+  - "apiextensions.k8s.io"
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - '*'
+- apiGroups:
+  - "tomcatoperator.io"
+  resources:
+  - tomcats
+  - tomcats/status
+  - webapps
+  - webapps/status
+  verbs:
+  - '*'
